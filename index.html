@@ -1,0 +1,176 @@
+<!-- File: index.html
+Undangan Web Wedding Ryio
+Sudah ditambah: Musik + Animasi -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Ryio – Undangan</title>
+
+    <!-- Animasi CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #eef6ff;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 70px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=1200&q=60');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            animation: fadeDown 1.2s ease-out;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            padding: 40px 20px;
+            animation: fadeUp 1.3s ease-out;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            margin: auto;
+            max-width: 500px;
+            border-radius: 18px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            animation: fadeUp 1.3s ease-out;
+        }
+
+        h2 { color: #1d4ed8; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: #1d4ed8;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #163fa2;
+            transform: scale(1.05);
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 14px;
+            background: #dbeafe;
+            margin-top: 50px;
+            color: #1e3a8a;
+        }
+
+        /* Tombol musik */
+        #musicBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1d4ed8;
+            color: white;
+            border: none;
+            padding: 14px 18px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Musik Background -->
+<audio id="bgmusic" loop>
+    <source src="https://filesamples.com/samples/audio/mp3/sample1.mp3" type="audio/mp3">
+</audio>
+
+<button id="musicBtn">🎵</button>
+
+<script>
+    const music = document.getElementById("bgmusic");
+    const btn = document.getElementById("musicBtn");
+    let playing = false;
+
+    btn.onclick = () => {
+        if (!playing) {
+            music.play();
+            playing = true;
+            btn.textContent = "⏸";
+        } else {
+            music.pause();
+            playing = false;
+            btn.textContent = "🎵";
+        }
+    };
+</script>
+
+
+<header>
+    <h1>Wedding Ryio</h1>
+    <p>16 Desember 2025</p>
+</header>
+
+<section class="section">
+    <div class="card">
+        <h2>Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+        <p>Dengan penuh rasa syukur kami mengundang Bapak/Ibu/Saudara/i pada acara:</p>
+
+        <h3 style="margin-top:25px; font-size:24px;">💍 Acara Pernikahan Ryio 💍</h3>
+
+        <p><b>📅 Tanggal:</b> 16 Desember 2025 <br>
+           <b>⏰ Waktu:</b> 10.00 – Selesai <br>
+           <b>📍 Lokasi:</b><br> Jalan Ponorogo, Kelurahan Jawa,<br> Sanga-Sanga, Kalimantan Timur
+        </p>
+
+        <h3>🗺 Lokasi Google Maps</h3>
+        <iframe
+            src="https://www.google.com/maps?q=Jalan%20Ponorogo%20Kelurahan%20Jawa%20Sanga-Sanga%20Kalimantan%20Timur&output=embed">
+        </iframe>
+
+        <a href="https://maps.app.goo.gl/" class="btn" target="_blank">Buka Google Maps</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="card">
+        <h2>Ucapan & Doa</h2>
+        <p>Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa terbaik.</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Wedding Ryio — Undangan Web
+</footer>
+
+</body>
+</html>
+
